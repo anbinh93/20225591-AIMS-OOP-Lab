@@ -66,40 +66,40 @@ public class Cart {
         return total;
     }
 
-//   public void printCart() {
-//        System.out.println("***********************CART***********************");
-//        System.out.println("Ordered Items:");
-//        for (int i = 0; i < qtyOrdered; i++) {
-//            System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
-//        }
-//        System.out.println("Total cost: " + totalCost() + " $");
-//        System.out.println("***************************************************");
-//    }
-//
-//    public void searchById(int id) {
-//        boolean found = false;
-//        for (int i = 0; i < qtyOrdered; i++) {
-//            if (itemsOrdered[i].getId() == id) {
-//                System.out.println(itemsOrdered[i].toString());
-//                found = true;
-//            }
-//        }
-//        if (!found) {
-//            System.out.println("No match found for ID: " + id);
-//        }
-//    }
-//
-//    public void searchByTitle(String title) {
-//        boolean found = false;
-//        for (int i = 0; i < qtyOrdered; i++) {
-//            if (itemsOrdered[i].getTitle().equalsIgnoreCase(title)) {
-//                System.out.println(itemsOrdered[i].toString());
-//                found = true;
-//            }
-//        }
-//        if (!found) {
-//            System.out.println("No match found for title: " + title);
-//        }
-//    }
+  public void printCart() {
+       System.out.println("***********************CART***********************");
+       System.out.println("Ordered Items:");
+       for (int i = 0; i < qtyOrdered; i++) {
+           System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
+       }
+       System.out.println("Total cost: " + totalCost() + " $");
+       System.out.println("***************************************************");
+   }
+
+   public void searchById(int id) {
+       boolean found = false;
+       for (int i = 0; i < qtyOrdered; i++) {
+           if (itemsOrdered[i].getId() == id) {
+               System.out.println(itemsOrdered[i].toString());
+               found = true;
+           }
+       }
+       if (!found) {
+           System.out.println("No match found for ID: " + id);
+       }
+   }
+
+   public void searchByTitle(String title) {
+       boolean found = false;
+       for (int i = 0; i < qtyOrdered; i++) {
+           if (itemsOrdered[i].getTitle().equalsIgnoreCase(title)) {
+               System.out.println(itemsOrdered[i].toString());
+               found = true;
+           }
+       }
+       if (!found) {
+           System.out.println("No match found for title: " + title);
+       }
+   }
 }
 

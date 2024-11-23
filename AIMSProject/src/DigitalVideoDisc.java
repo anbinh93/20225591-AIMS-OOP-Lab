@@ -81,6 +81,6 @@ public class DigitalVideoDisc {
        return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + " $";
    }
    public boolean isMatch(String title) {
-       return this.title.equalsIgnoreCase(title);
-   }
+    return title != null && this.title.equalsIgnoreCase(title);
+}
 }
