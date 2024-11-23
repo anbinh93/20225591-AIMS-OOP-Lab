@@ -35,12 +35,6 @@ public class Cart {
         }
     }
 
-//    public void addDigitalVideoDisc(DigitalVideoDisc... discs) {
-//        for (DigitalVideoDisc disc : discs) {
-//            addDigitalVideoDisc(disc);
-//        }
-//    }
-
     public void addDigitalVideoDisc(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
         addDigitalVideoDisc(disc1);
         addDigitalVideoDisc(disc2);
