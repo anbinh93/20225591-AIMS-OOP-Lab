@@ -1,3 +1,7 @@
+package hust.soict.hedspi.aims.store;
+
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+
 public class Store {
     private DigitalVideoDisc[] itemsInStore = new DigitalVideoDisc[100];
     private int qtyInStore = 0;
