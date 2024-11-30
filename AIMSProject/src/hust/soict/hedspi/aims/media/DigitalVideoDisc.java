@@ -1,85 +1,48 @@
+
 package hust.soict.hedspi.aims.media;
+public class DigitalVideoDisc extends Disc implements Playable{
 
-public class DigitalVideoDisc extends Media {
-    private String director;
-    private int length;
-    private static int nbDigitalVideoDisc = 0;
-
-
-    public DigitalVideoDisc(String title) {
-        super(title);
-        this.id = ++nbDigitalVideoDisc;
+    public DigitalVideoDisc(int id, String title) {
+        super(id, title);
     }
 
-    public DigitalVideoDisc(String title, String category) {
-        this(title);
-        this.category = category;
+    public DigitalVideoDisc(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director) {
-        this(title, category);
-        this.director = director;
+    public DigitalVideoDisc(int id, String title, String category, String director, float cost) {
+        super(id, title, category, director, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length) {
-        this(title, category, director);
-        this.length = length;
+    public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
+        super(id, title, category, director, length, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this(title, category, director, length);
-        this.cost = cost;
+    // id - DVD - title - category - director - length - cost
+    public String toString() {
+        String result = this.getId() + ". DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + ": " + this.getCost() + "$";
+        return result;
     }
 
-    public String getTitle() {
-        return title;
+    // public boolean isMatch(String title){
+    // 	if (this.getTitle().toLowerCase().equals(title.toLowerCase())) {
+    // 		return true;
+    // 	}
+    // 	return false;
+    // }
+    // public boolean isMatch(int id){
+    // 	if (this.getId() == id) {
+    // 		return true;
+    // 	}
+    // 	return false;
+    // }
+
+    public void play() {
+        if (this.getLength() <= 0) {
+            System.out.println("DVD " + this.getTitle() + " can't be played!");
+        } else {
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
+        }
     }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public float getCost() {
-        return cost;
-    }
-
-   public int getId() {
-       return id;
-   }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
-
-   @Override
-   public String toString() {
-       return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + " $";
-   }
-   public boolean isMatch(String title) {
-    return title != null && this.title.equalsIgnoreCase(title);
-}
 }

@@ -1,30 +1,33 @@
 package hust.soict.hedspi.aims.media;
 
-public class Track extends Media {
-    @Override
+public class Track implements Playable{
+    private String title;
+    private int length;
+    public Track(String title, int length) {
+        this.title = title;
+        this.length = length;
+    }
     public String getTitle() {
         return title;
     }
-
-    @Override
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getLength() {
         return length;
     }
-
-    public void setLength(int length) {
-        this.length = length;
+    public void play() {
+        if (this.getLength() <= 0) {
+            System.out.println("Track " + this.getTitle() + " can't be played");
+        } else {
+            System.out.println("Playing track: " + this.getTitle());
+            System.out.println("Track length: " + this.getLength());
+        }
     }
-
-    private String title;
-    private int length;
-
-    public Track(String title, int length) {
-        super(length, title);
-        this.title = title;
-        this.length = length;
+    public boolean equals(Object obj) {
+        if (obj instanceof Track) {
+            Track track = (Track) obj;
+            if (this.title == track.title && this.length == track.length) {
+                return true;
+            }
+        }
+        return false;
     }
 }

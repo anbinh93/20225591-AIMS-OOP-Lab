@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc{
+public class CompactDisc extends Disc implements Playable{
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
@@ -16,6 +16,10 @@ public class CompactDisc extends Disc{
         this.artist = artist;
     }
 
+    public CompactDisc(int id, String title, String artist, String category, String director, float cost) {
+        super(id, title, category, director, cost);
+        this.artist = artist;
+    }
 
     public String getArtist() {
         return artist;
@@ -43,15 +47,21 @@ public class CompactDisc extends Disc{
         }
         return sum;
     }
-
+    public void play() {
+        System.out.println("Playing CD: " + this.getTitle());
+        System.out.println("CD length: " + this.getLength());
+        for (Track track : tracks) {
+            track.play();
+        }
+    }
     // id - CD - title - category - artist - tracks - length - cost
-//    public String toString() {
-//        String tracks = "";
-//        for (Track track : this.tracks) {
-//            tracks += track.getTitle() + ", ";
-//        }
-//        //Remove the last ", "
-//        tracks = tracks.substring(0, tracks.length() - 2);
-//        return this.getId() + ". CD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getArtist() + " - " + tracks + " - " + this.getLength() + ": " + this.getCost() + "$";
-//    }
+    public String toString() {
+        String tracks = "";
+        for (Track track : this.tracks) {
+            tracks += track.getTitle() + ", ";
+        }
+        //Remove the last ", "
+        tracks = tracks.substring(0, tracks.length() - 2);
+        return this.getId() + ". CD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getArtist() + " - " + tracks + " - " + this.getLength() + ": " + this.getCost() + "$";
+    }
 }
