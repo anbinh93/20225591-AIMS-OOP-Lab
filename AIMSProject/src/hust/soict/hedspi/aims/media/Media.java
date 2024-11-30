@@ -49,4 +49,12 @@ public abstract class Media {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
+    public boolean isMatch(String title){
+        return (this.getTitle().toLowerCase().equals(title.toLowerCase()));
+    }
+
+    public boolean isMatch(int id) {
+        return this.getId() == id;
+    }
 }
