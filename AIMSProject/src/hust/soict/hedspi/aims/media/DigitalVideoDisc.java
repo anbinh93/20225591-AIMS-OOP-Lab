@@ -28,18 +28,18 @@ public class DigitalVideoDisc extends Disc implements Playable{
         return result;
     }
 
-    // public boolean isMatch(String title){
-    // 	if (this.getTitle().toLowerCase().equals(title.toLowerCase())) {
-    // 		return true;
-    // 	}
-    // 	return false;
-    // }
-    // public boolean isMatch(int id){
-    // 	if (this.getId() == id) {
-    // 		return true;
-    // 	}
-    // 	return false;
-    // }
+     public boolean isMatch(String title){
+     	if (this.getTitle().toLowerCase().equals(title.toLowerCase())) {
+     		return true;
+     	}
+     	return false;
+     }
+     public boolean isMatch(int id){
+     	if (this.getId() == id) {
+     		return true;
+     	}
+     	return false;
+     }
 
     public void play() {
         if (this.getLength() <= 0) {

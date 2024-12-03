@@ -28,5 +28,12 @@ public class Book extends Media{
         authors.remove(authorName);
         System.out.println("Remove author successfully");
     }
+    public String toString() {
+        String authors = "";
+        for (String author : this.authors) {
+            authors += author + ", ";
+        }
+        return "Book - " + this.getTitle() + " - " + this.getCategory() + " - " + authors + " " + this.getCost() + " $";
+    }
 
 }
