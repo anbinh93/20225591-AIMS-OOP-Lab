@@ -135,4 +135,12 @@ public class Cart {
         }
         return null;
     }
+
+    public void sortMediaByTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void sortMediaByCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
 }
